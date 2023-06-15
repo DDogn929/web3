@@ -1,0 +1,23 @@
+++
+--
+
+let index = 0;
+index++;
+alert(index);
+=> 1
+
+index++; 는
+index + = 1;이면서 풀어 쓰면
+index= index + 1; 이다
+
+
+let index = 0 ; // index = 0
+                // index = 0
+index++         // index = 0
+                // index = 1 (다음줄에 증가)
+++index         // index = 2 (일단 증가)
+                // index = 2
+
+index++ 는 다음줄에 증가
+
+++index 일단 증가

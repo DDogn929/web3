@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 
+        복숭아 개수가 한바구니에 10개까지 들어감
+        복숭아 개수만큼 바구니가 몇 개 필요한가?
+        peachBasket
+        peach / 10
+        Math.floor()
+     -->
+    <script>
+        const peach = Number(prompt('복숭아 개수를 입력하세요.'));
+        let peachBasket = Math.floor((peach / 10));
+        let peachNa = peach % 10
+        if(peachNa !== 0){
+            peachBasket++;
+        }
+        alert(peachBasket)
+    </script>
+</body>
+</html>
