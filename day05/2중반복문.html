@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+        
+        .container{
+            margin: 0 auto;
+            width: 800px;
+            display: flex;
+            justify-content: space-between;
+        }
+        
+        .box{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100px;
+            height: 100px;
+            color: rgb(75, 75, 75);
+            background-color: rgb(200, 200, 200);
+            border: 2px solid rgb(125, 125, 125);
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+<body>
+    <script>
+
+        document.write('<div class="container">');
+
+        for(let i = 0 ; i <5 ; i++ ){
+            document.write('<div class="box">div</div>')
+            // document.write('div')
+            // document.write('</div>')
+        }
+
+        document.write('<div>');
+
+    </script>
+</body>
+</html>

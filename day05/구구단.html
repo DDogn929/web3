@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            width: 300px;
+            margin: 0 auto;
+            padding: 10px;
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <!--
+        프롬포트로 입력
+        몇단을 출력할까요?
+        숫자를 입력하면 해당 단을 출력 (X1 부터 X9 까지 출력)
+        출력은 document.write(출력할내용);
+        
+        document.write();는
+        html 문서에 내용을 추가해주는 명령어
+        이 기능(메서드)을 이용하면 자바스크립트로 html에 글을 쓸 수 있다.
+    -->
+    <script>
+        const userNumber = prompt ('몇 단을 출력할까요?');
+        
+        document.write('<div class="container">');
+            
+            for(let i = 1 ; i <= 9 ; i++){
+                document.write(`${userNumber} x ${i} = ${(userNumber * i)}`);
+                document.write('<br>');
+            }
+
+        document.write('</div>');
+    </script>
+</body>
+</html>
