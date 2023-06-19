@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        
+        .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            /* gap: 10px; */
+            background-color: rgb(44, 44, 44);
+        }        
+
+        .box{
+            padding: 5px;
+            width: 100px;
+            border: 2px solid rgb(65, 65, 65);
+            box-sizing: border-box;
+            background-color: rgb(99, 99, 99);    
+            color: white;     
+        }
+        
+    </style>
+</head>
+<body>
+    <script>
+        
+        
+
+        // for(i = 1 ; i < 10 ; i++){
+        //     for(j = 1 ; j < 10 ; j++){
+        //         document.write(`${i} * ${j} = ${(i * j)}`);
+        //         document.write('<br>');
+        //     }
+        //     document.write('<br>');
+        // }
+        document.write('<div class="container">');
+        for(let i = 1 ; i < 10 ; i++){
+            document.write('<div class="box">');
+            document.write(`<h3>${i} 단</h3>`)
+            for(let j = 1 ; j < 10 ; j++){
+                // document.write('<div class="dan">');
+                document.write(`<p>${i} x ${j} = ${(i * j)}</p>`);
+                // document.write('</div>');
+            }
+            divClose();
+        }
+        divClose();
+
+        function divClose(){
+            document.write('</div>')
+        }
+
+        
+
+    </script>
+</body>
+</html>

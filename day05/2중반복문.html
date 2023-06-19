@@ -9,15 +9,29 @@
             margin: 0;
             padding: 0;
         }
-        
-        .container{
+
+        .mainContainer{
             margin: 0 auto;
-            width: 800px;
+            padding: 50px 32px;
+            max-width: 800px;
+            display: flex;
+            justify-content: space-between;
+            flex-direction: column;
+            gap: 100px;
+        }
+        
+        .divContainer{
+            margin: 0 auto;
+            width: 100%;
             display: flex;
             justify-content: space-between;
         }
+
+        /* .divContainer:first-child{
+            margin-top: 100px;
+        } */
         
-        .box{
+        .divBox{
             display: flex;
             justify-content: center;
             align-items: center;
@@ -33,15 +47,30 @@
 <body>
     <script>
 
-        document.write('<div class="container">');
+        // document.write('<div class="container">');
 
-        for(let i = 0 ; i <5 ; i++ ){
-            document.write('<div class="box">div</div>')
-            // document.write('div')
-            // document.write('</div>')
+        // for(let i = 0 ; i <5 ; i++ ){
+        //     document.write('<div class="box">div</div>')
+        //     // document.write('div')
+        //     // document.write('</div>')
+        // }
+
+        // document.write('</div>');
+        
+        document.write('<div class="mainContainer">');    
+        
+        for(let i = 0 ; i < 5 ; i ++){
+
+            document.write('<div class="divContainer">');
+
+            for(let j = 0 ; j < 5 ; j ++ ){
+                document.write('<div class="divBox">div</div>');
+            }
+
+            document.write('</div>');
         }
 
-        document.write('<div>');
+        document.write('</div>');
 
     </script>
 </body>
