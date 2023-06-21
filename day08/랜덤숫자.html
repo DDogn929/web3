@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <button id="랜덤버튼">랜덤생성(50~100)</button>
+
+    <script>
+        // Mach.random(); 임의의 수를 반환해준다. 범위는 0(이상)부터 1(미만)사이 : 0 ~ 0.99999...
+        // Mach.floor(); 내림(소숫점버림)
+        // ex> 0 부터 9를 만들때 : Mach.floor(Mach.random()*10); 
+        // ex> 1 부터 10를 만들때 : Mach.floor(Mach.random()*10 + 1); 
+
+        const 랜덤생성 = document.getElementById('랜덤버튼');
+
+        랜덤생성.addEventListener('click',랜덤숫자)
+
+        console.log(랜덤생성);
+
+        function 랜덤숫자(){
+            alert(Math.floor(Math.random() * 51 + 50));
+        }
+        // Mach.floor(Math.random() * 50 + 50);
+        // 50이 아닌 51인 이유는 50으로 할시 50 부터 99 까지 나오기 때문 + 50을 곱하든 51을 곱하든 0은 0이다.
+        
+
+    </script>
+</body>
+</html>

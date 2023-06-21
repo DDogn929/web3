@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <div>
+        랜덤 가위바위보
+        <button id="가위버튼">가위</button>
+        <button id="바위버튼">바위</button>
+        <button id="보버튼">보</button>
+    </div>
+    
+    <script>
+        const 가위클릭 = document.getElementById('가위버튼')
+        const 바위클릭 = document.getElementById('바위버튼')
+        const 보클릭 = document.getElementById('보버튼')
+
+        console.log(가위클릭);
+        console.log(바위클릭);
+        console.log(보클릭);
+
+        가위클릭.addEventListener('click', 가위내기);
+        바위클릭.addEventListener('click', 바위내기);
+        보클릭.addEventListener('click', 보내기);
+
+
+        function 랜덤(){
+            if(math.floor(math.randon()*2) === 0){
+                가위;
+            }else if(math.floor(math.randon()*2) === 1){
+                바위;
+            }else{
+                보;
+            }
+        }
+
+        function 가위내기(){
+            if(math.floor(math.randon()*2) === 0){
+                alert('무승부');
+            }else if(math.floor(math.randon()*2) === 1){
+                alert('패배');
+            }else{
+                alert('승리');
+            }
+        }
+
+        
+
+        // math.floor(math.randon()*2)
+
+        
+    </script>
+</body>
+</html>
