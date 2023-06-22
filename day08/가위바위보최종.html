@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .random-box{
+            margin: 0 auto;
+            margin-top: 120px;
+            padding: 20px;
+            width: 200px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            border: 2px solid black;
+        }
+    </style>
+</head>
+<body>
+    <section class="random-box">
+
+        <p>랜덤 가위바위보</p>
+    
+        <div>
+            <button id="가위">가위</button>
+            <button id="바위">바위</button>
+            <button id="보">보</button>
+        </div>
+
+    </section>
+
+    <script>
+        const 가위버튼 = document.getElementById('가위')
+        const 바위버튼 = document.getElementById('바위')
+        const 보버튼 = document.getElementById('보')
+
+        // 자주쓰는 기능은 let을 미리주면 사용하기 편해진다. 
+        let computer;
+
+        // 가위 : 0 ; 바위 : 1 ; 보 : 2
+        가위버튼.addEventListener('click',가위바위보(0));
+        바위버튼.addEventListener('click',가위바위보(1));
+        보버튼.addEventListener('click',가위바위보(2));
+
+        // 함수 안에 함수를 넣으면 안쪽 함수는 숨겨짐
+        // function 함수이름(매게변수)로 함수에 변수를 줄 수 있다.
+        function 가위바위보(유저의선택) {
+            컴퓨터의차례();
+            if (comupter === 유저의선택) {
+                alert('무승부')
+            } else if ((comupter === 1 && 유저의선택 === 0) || (comupter === 2 && 유저의선택 === 1) || (comupter === 0 && 유저의선택 === 2)) {
+                alert('패배')
+            } else {
+                alert('승리')
+            }
+
+            function 컴퓨터의차례() {
+                comupter = Math.floor(Math.random() * 3);
+                if (comupter === 0) {
+                    alert("컴 : 가위");
+                } else if (comupter === 1) {
+                    alert("컴 : 바위");
+                } else {
+                    alert("컴 : 보");
+                }
+
+            }
+        }
+
+    </script>
+</body>
+</html>

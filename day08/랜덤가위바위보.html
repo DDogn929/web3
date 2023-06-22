@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .random-box{
+            margin: 0 auto;
+            margin-top: 120px;
+            padding: 20px;
+            width: 200px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            border: 2px solid black;
+        }
+    </style>
+</head>
+<body>
+    <section class="random-box">
+
+        <p>랜덤 가위바위보</p>
+    
+        <div>
+            <button id="가위">가위</button>
+            <button id="바위">바위</button>
+            <button id="보">보</button>
+        </div>
+
+    </section>
+    
+    <!-- <p>랜덤 결과 : <span class="결과"></span></p> -->
+    
+    <script>
+        const 가위버튼 = document.getElementById('가위')
+        const 바위버튼 = document.getElementById('바위')
+        const 보버튼 = document.getElementById('보')
+
+        // const 랜덤결과 = document.getElementsByClassName('결과')
+
+        console.log(가위버튼);
+        console.log(바위버튼);
+        console.log(보버튼);
+
+        가위버튼.addEventListener('click',);
+        바위버튼.addEventListener('click',바위내기);
+        보버튼.addEventListener('click',보내기);
+        
+        function 랜덤내기(){
+            
+            function 랜덤(){
+                return Math.floor(Math.random()*3);
+            }
+            if(랜덤() == 0){
+                return '가위';
+            }else if(랜덤() == 1){
+                return '바위';
+            }else{
+                return '보';
+            }
+        }
+
+        function 컴퓨터의차례(){
+            if(랜덤() === 0){
+                alert('')
+            }
+        }
+
+        // function 결과(){
+        //     alert(`컴퓨터는 ${랜덤내기()}를 냈습니다.`);
+        // }
+
+        function 가위내기(){
+            
+            if(랜덤내기() == '가위'){
+                alert(`결과는 "무승부" 입니다.`);
+            }else if(랜덤내기() == '바위'){
+                alert(`결과는 "패배" 입니다.`);
+            }else{
+                alert(`결과는 "승리" 입니다.`);
+            }
+
+        }
+
+        function 바위내기(){
+
+            if(랜덤내기() == '가위'){
+                alert(`결과는 "승리" 입니다.`);
+            }else if(랜덤내기() == '바위'){
+                alert(`결과는 "무승부" 입니다.`);
+            }else{
+                alert(`결과는 "패배" 입니다.`);
+            }
+
+        }
+
+        function 보내기(){
+
+            if(랜덤내기() == '가위'){
+                alert(`결과는 "패배" 입니다.`);
+            }else if(랜덤내기() == '바위'){
+                alert(`결과는 "승리" 입니다.`);
+            }else{
+                alert(`결과는 "무승부" 입니다.`);
+            }
+
+        }
+
+        // function 대결(a,b,c){
+        //     if(랜덤내기() == '가위'){
+        //         alert(`상대는 "가위" 를 냈습니다.`);
+        //         alert(`결과는 "${a}" 입니다.`);
+        //     }else if(랜덤내기() == '바위'){
+        //         alert(`상대는 "바위" 를 냈습니다.`);
+        //         alert(`결과는 "${b}" 입니다.`);
+        //     }else{
+        //         alert(`상대는 "보" 를 냈습니다.`);
+        //         alert(`결과는 "${c}" 입니다.`);
+        //     }
+        // }
+
+
+        // Math.floor(Math.random()*3));
+
+        // 0 = 가위
+        // 1 = 바위
+        // 2 = 보
+    </script>
+</body>
+</html>
