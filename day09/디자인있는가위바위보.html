@@ -60,9 +60,10 @@
         </div>
         <div class="computer-container">
             <p>컴퓨터의 선택은!</p>
-            <button class="컴퓨터의선택" id="컴퓨터의선택"></button>
+            <button class="" id="컴퓨터의선택"></button>
         </div>
         <p id="result">결과</p>
+        <p id="win-count">총승리 : xx회, 연승 xx회</p>
     </div>
 
     <script>
@@ -72,9 +73,14 @@
         const 바위버튼 = document.getElementById("바위버튼");
         const 보버튼 = document.getElementById("보버튼");
         const 컴퓨터의선택 = document.getElementById("컴퓨터의선택");
+        const 결과 = document.getElementById("result")
+        const 승리카운트 = document.getElementById("win-count")
 
 
         let comupter;
+
+        let 총승리 = 0;
+        let 연승 = 0;
 
 
         // 버튼을 누르면 어떤 일이 벌어져야하는가?
@@ -89,37 +95,47 @@
         보버튼.addEventListener('click', () => {
             가위바위보(2);
         })
-
+        
         function 가위바위보(유저의선택) {
             컴퓨터의차례();
             if (comupter === 유저의선택) {
                 // alert('무승부')
-                result.innerText = '무승부'
+                결과.innerText = '무승부 입니다.'
             } else if ((comupter === 1 && 유저의선택 === 0) || (comupter === 2 && 유저의선택 === 1) || (comupter === 0 && 유저의선택 === 2)) {
                 // alert('패배')
-                result.innerText = '패배'
+                결과.innerText = '패배 입니다.'
+                연승 = 0;
             } else {
                 // alert('승리')
-                result.innerText = '승리'
+                결과.innerText = '승리 입니다.'
+                총승리++;
+                연승++;
             }
+
+            승리카운트.innerText = `총승리 : ${총승리}회 , 연승 : ${연승}회`
 
             function 컴퓨터의차례() {
                 comupter = Math.floor(Math.random() * 3);
+                초기화()
                 if (comupter === 0) {
                     // alert("컴 : 가위");
-                    컴퓨터의선택.classList.remove('가위버튼');
                     컴퓨터의선택.classList.add('가위버튼');
                 } else if (comupter === 1) {
                     // alert("컴 : 바위");
-                    컴퓨터의선택.classList.remove('바위버튼');
                     컴퓨터의선택.classList.add('바위버튼');
                 } else {
                     // alert("컴 : 보");
-                    컴퓨터의선택.classList.remove('보버튼');
                     컴퓨터의선택.classList.add('보버튼');
                 }
 
             }
+
+            function 초기화(){
+                컴퓨터의선택.classList.remove('가위버튼')
+                컴퓨터의선택.classList.remove('바위버튼')
+                컴퓨터의선택.classList.remove('보버튼')
+            }
+            
 
         }
 
