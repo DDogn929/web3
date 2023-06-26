@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 배열 하나 만들고,
+        // 랜덤한 숫자(0~9)를 4개 넣어주세요.
+        // 배열에 값 추가하기 : 배열.push(추가할값);
+
+
+        let 입력할숫자;
+
+        const 정답 = [];
+
+        const 입력한숫자 = [];
+
+        // const 첫번째숫자 = Number(prompt('첫번째 숫자를 입력하세요.'))
+
+
+
+        for (let i = 0; i < 4; i++) {
+            let 난수;
+
+            while (true) {
+                난수 = Math.floor(Math.random() * 10);
+                if (정답.indexOf(난수) === -1) {
+                    break;
+                }
+            }
+            정답.push(난수);
+        }
+
+        // let userInput = Number(prompt('숫자를 입력하세요.'))
+
+        // const userInput = [];
+        // let 스트라이크 = 0;
+        // let 볼 = 0;
+
+        
+
+        // console.log(userInput);
+
+        for (let i = 0; i < 10; i++) {
+            console.log(`${i + 1}번째 시도입니다.`);
+
+            const 적중 = 게임();
+
+            if (적중 === 4) {
+                console.log('정답!');
+                break;
+            } else if (i === 9) {
+                console.log('패배하셨군요');
+                console.log(`당신이 찾아 헤메던 정답은 ${정답} 입니다 ㅋㅋ`)
+            }
+        }
+
+
+        function 게임() {
+
+            const userInput = [];
+            let 스트라이크 = 0;
+            let 볼 = 0;
+
+            for (let i = 0; i < 4; i++){
+                userInput.push(Number(prompt('숫자를 입력하세요')));
+            }
+
+            for(let i = 0; i < 4; i++){
+                if(userInput[i] === userInput[i - 1]){
+                    console.log('다시입력하세요');
+                    break;
+                }
+            }
+
+            for (let i = 0; i < 4; i++) {
+
+                if(정답[i] === userInput[i]){
+                    스트라이크++;
+                }
+
+                for (let j = 0; j <4; j++) {
+                    if(i !== j && userInput[i] === 정답[j]){
+                        볼++;
+                    }
+                }
+            }
+
+            console.log(`스트라이크 : ${스트라이크} , 볼 : ${볼}`);
+            console.log(userInput)
+
+            return 스트라이크;
+
+            // 스트라이크 = 0;
+            // 볼 = 0;
+
+            // // userInput.pop(); 배열의 맨 뒤 요소를 지움
+            // // userInput.shift(); 배열의 맨 앞 요소를 지움
+            // // userInput.splice(몇번째꺼부터,몇개를지울거냐);
+
+            // userInput.splice();
+
+            // console.log(userInput);
+        }
+    </script>
+</body>
+
+</html>
