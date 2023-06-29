@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        *{
+            margin: 0;
+            padding: 0;
+        }
+
+        .slider {
+            width: 500px;
+            height: 200px;
+            overflow: hidden;
+        }
+
+        .contents-wapper {
+            display: flex;
+            transition: 0.5s;
+            /* transform: translateX(); */
+        }
+
+        .content{
+            /* width: 200px;
+            height: 100px; */
+            border: 1px solid #222;
+            box-sizing: border-box;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 32px;
+            font-weight: bold;
+            flex-shrink: 0;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="slider">
+        <ul class="contents-wapper">
+            <li class="content">
+                1
+            </li>
+            <li class="content">
+                2
+            </li>
+            <li class="content">
+                3
+            </li>
+            <li class="content">
+                4
+            </li>
+        </ul>
+    </div>
+
+    <button id="prev">
+        이전
+    </button>
+
+    <button id="next">
+        다음
+    </button>
+
+    <script>
+        const slider = document.querySelector('.slider');
+
+        const prevButton = document.getElementById('prev');
+        const nextButton = document.getElementById('next');
+        const ul = document.querySelector('.contents-wapper');
+        const content = document.getElementsByClassName('content');
+
+        const sliderWidth = slider.clientWidth;
+        const sliderHeight = slider.clientHeight;
+
+        let index = 0;
+
+        for(let i = 0 ; i < ul.childElementCount; i++){
+            ul.children[i].style.width =`${sliderWidth}px`;
+            ul.children[i].style.height =`${sliderHeight}px`;
+        }
+
+        
+
+        let trans = 0;
+    
+        function 위치적용() {
+            ul.style.transform = `translateX(-${index * sliderWidth}px)`;
+        }  
+        
+        //이전버튼
+        prevButton.addEventListener('click', ()=>{
+            index--;
+            //`translateX(-${trans +- trans}px)`에서 translareX의 - 값은 그대로 
+            //trans의 값만 변경
+            위치적용();
+        })
+
+        //다음버튼
+        nextButton.addEventListener('click', ()=>{    
+            index++;     
+            위치적용();
+        })
+
+
+
+
+
+        
+
+    </script>
+</body>
+</html>
