@@ -13,7 +13,12 @@
 
         .slider {
             width: 500px;
-            height: 200px;
+            height: 500px;
+        }
+
+        .slider-view {
+            width: 100%;
+            height: 100%;
             overflow: hidden;
         }
 
@@ -41,42 +46,45 @@
 <body>
 
     <div class="slider">
-        <ul class="contents-wapper">
-            <li class="content">
-                1
-            </li>
-            <li class="content">
-                2
-            </li>
-            <li class="content">
-                3
-            </li>
-            <li class="content">
-                4
-            </li>
-        </ul>
+        <div class="slider-view">
+            <div class="contents-wapper">
+                <div class="slider-content">
+                    1
+                </div>
+                <div class="slider-content">
+                    2
+                </div>
+                <div class="slider-content">
+                    3
+                </div>
+                <div class="slider-content">
+                    4
+                </div>
+            </div>
+        </div>
+    
+        <button class="slider-prev">
+            이전
+        </button>
+        <button class="slider-next">
+            다음
+        </button>
     </div>
 
-    <button id="prev">
-        이전
-    </button>
-
-    <button id="next">
-        다음
-    </button>
-
     <script>
-        const slider = document.querySelector('.slider');
+        const slider = document.querySelector('.slider-view');
 
-        const prevButton = document.getElementById('prev');
-        const nextButton = document.getElementById('next');
+        const prevButton = document.getElementById('slider-prev');
+        const nextButton = document.getElementById('slider-next');
         const ul = document.querySelector('.contents-wapper');
-        const content = document.getElementsByClassName('content');
+        const content = document.getElementsByClassName('slider-content');
 
         const sliderWidth = slider.clientWidth;
         const sliderHeight = slider.clientHeight;
 
         let index = 0;
+
+        let trans = 0;
 
         for(let i = 0 ; i < ul.childElementCount; i++){
             ul.children[i].style.width =`${sliderWidth}px`;
@@ -84,11 +92,10 @@
         }
 
         
-
-        let trans = 0;
     
         function 위치적용() {
             ul.style.transform = `translateX(-${index * sliderWidth}px)`;
+            //슬라이더
         }  
         
         //이전버튼
