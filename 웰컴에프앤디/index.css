@@ -1,47 +1,114 @@
-.header-background {
-    width: 100%;
-    height: 100vh;
-    background-color: rgb(125, 125, 125);
+body {
+    background-color: gray;
 }
 
-/* .main-mo{
-    width: 100%;
-    height: 100vh;
-} */
+a {
+    text-decoration: none;
+}
 
-.header-menu{
+main {
+    overflow: hidden;
+}
+
+header {
+    position: relative;
+}
+
+.header-menu {
+    position: absolute;
     width: 100%;
-    height: 100px;
+    margin: 0 auto;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    z-index: 999;
 }
 
-.header-Logo{
-    width: 160px;
-    height: 20px;
+.header-logo {
+    /* display: block; */
+    width: 158px;
+    height: 23px;
     background-image: url(image/header_logo_tp.svg);
     background-size: cover;
-    background-position: center;
 }
 
-.header-List{
-    color: white;
+.header-ul {
     display: flex;
-    justify-content: space-between;
-    gap: 50px;
+    gap: 0;
 }
 
-.header-Hamburger {
-    width: 22px;
-    height: 18px;
+.header-list {
+    /* padding: 40px; */
+}
+
+.header-list > a {
+    padding: 40px;
+    display: block;
+    color: white;
+    font-size: 14px;
+}
+
+.arrow::after {
+    content: "";
+    display: inline-block;
+    width: 9px;
+    height: 9px;
+    background-image: url(image/icon_arrow_tp.png);
+    background-size: cover;
+    margin: 0 0 2px 2px;
+}
+
+.header-hamburger {
+    padding: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.hamburger-container {
+    position: absolute;
+    height: 20px;
     display: flex;
     justify-content: space-between;
     flex-direction: column;
 }
 
-.Hamburger {
+.hamburger {
     width: 22px;
     height: 2px;
     background-color: white;
+}
+
+.video-section {
+    /* width: 100%;
+    height: 100vh; */
+    position: relative;
+}
+
+.main-video {
+    width: 100%;
+    height: 100vh;
+}
+
+.main-title {
+    position: absolute;
+    width: 100%;
+    top: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    color: white;
+}
+
+/* .main-anime {
+    display: inline;
+} */
+
+.countup-section {
+    width: 100%;
+}
+
+.countup-section > h2 {
+    text-align: center;
 }
