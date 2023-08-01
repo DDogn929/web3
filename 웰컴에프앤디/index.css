@@ -1,0 +1,47 @@
+.header-background {
+    width: 100%;
+    height: 100vh;
+    background-color: rgb(125, 125, 125);
+}
+
+/* .main-mo{
+    width: 100%;
+    height: 100vh;
+} */
+
+.header-menu{
+    width: 100%;
+    height: 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-Logo{
+    width: 160px;
+    height: 20px;
+    background-image: url(image/header_logo_tp.svg);
+    background-size: cover;
+    background-position: center;
+}
+
+.header-List{
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    gap: 50px;
+}
+
+.header-Hamburger {
+    width: 22px;
+    height: 18px;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+}
+
+.Hamburger {
+    width: 22px;
+    height: 2px;
+    background-color: white;
+}
